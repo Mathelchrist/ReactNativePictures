@@ -22,7 +22,7 @@ export default function ImagesScreen() {
 
     <FlatList
       data={image}
-      keyExtractor={(imageURI) => imageURI}
+      keyExtractor={(image) => image}
       renderItem={(itemData) => {
         console.log("item", itemData);
         return (

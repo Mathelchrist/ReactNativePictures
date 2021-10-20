@@ -35,6 +35,7 @@ export default function App() {
                 },
                 tabBarActiveTintColor: 'blue',
                 tabBarInactiveTintColor: 'gray',
+                unmountOnBlur: true,
               })}
               >
         <Tab.Screen name="Images" component={ImagesScreen} />
