@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
 import { Camera } from 'expo-camera';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import * as ImageManipulator from "expo-image-manipulator";
+import navigation from '@react-navigation/native';
 
 export default function CameraScreen() {
     const cameraRef = useRef(null);
@@ -41,13 +42,16 @@ export default function CameraScreen() {
                 <Button
                     title="Take a picture"
                     onPress={async () => {
+                        alert("Sauvegarde en cours...")
                         const pictureMetadata = await cameraRef.current.takePictureAsync();
+                        alert("Photo sauvegarder")
                         console.log("pictureMetadata", pictureMetadata);
                         console.log(
                             await ImageManipulator.manipulateAsync(pictureMetadata.uri, [
                                 { resize: { width: 800 } },
                             ])
                         );
+                        
                     }}
                 />
             </Camera>
