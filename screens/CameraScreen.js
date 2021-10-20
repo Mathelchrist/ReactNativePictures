@@ -39,7 +39,6 @@ export default function CameraScreen() {
                     </TouchableOpacity>
                 </View>
                 <Button
-                    style={styles.takePicture}
                     title="Take a picture"
                     onPress={async () => {
                         const pictureMetadata = await cameraRef.current.takePictureAsync();
