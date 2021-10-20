@@ -6,6 +6,7 @@ import axios from "axios";
 export default function ImagesScreen() {
   const [refresh, setRefresh] = useState(false);
   const [image, setImage] = useState([]);
+
   const reload = async () => {
     setRefresh(true);
     const images = await FileSystem.readDirectoryAsync(
@@ -80,11 +81,10 @@ export default function ImagesScreen() {
                   }
               }
               deletData();
+              reload();
               }
             }
             >
-
-
             </Button>
           </View >
         );
